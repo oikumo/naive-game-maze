@@ -1,11 +1,13 @@
 import {
   CanvasRenderer,
   RenderTexture,
-  Texture,
   Entity,
+  Texture,
   moveTo,
-  rectPointsInOther,
-  Rect
+  createRectFromCenter, createRectFromCorners, inRect,
+  rectInOther,
+  ui,
+  texture2bmp, bmp2texture
 } from 'naive-3d'
 
 const interval = 5
@@ -44,9 +46,9 @@ export const run = () => {
       }
       else {
         const nextPosition = movement(time)
-        const entityRect = new Rect(nextPosition.x, nextPosition.y, entity.dim.width, entity.dim.height)
-        const obstacleRect = new Rect(obstacle.center.x, obstacle.center.y, obstacle.dim.width, obstacle.dim.height)
-        const collisionPoints = rectPointsInOther(entityRect, obstacleRect)
+        const entityRect = createRectFromCenter(nextPosition, entity.dim.width, entity.dim.height)
+        const obstacleRect = createRectFromCenter(obstacle.center, obstacle.dim.width, obstacle.dim.height)
+        const collisionPoints = rectInOther(entityRect, obstacleRect)
         if (collisionPoints.length == 0) {
           entity.center = nextPosition
         } else {

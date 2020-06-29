@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx webpack"
+    "build-prod": "npx webpack --mode production",
+    "build-dev": "npx webpack --mode development",
+    "ins": "npm i"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,7 @@
   },
   "homepage": "https://github.com/oikumo/naive-game-maze#readme",
   "dependencies": {
-    "naive-3d": "0.0.8"
+    "naive-3d": "0.0.38"
   },
   "devDependencies": {
     "webpack": "^4.43.0",
