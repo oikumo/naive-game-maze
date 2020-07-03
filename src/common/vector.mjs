@@ -1,11 +1,23 @@
-const forward = () => new Float32Array([0.0, 0.0, 1.0])
-const left = () => new Float32Array([1.0, 0.0, 0.0])
-const right = () => new Float32Array([0.0, 1.0, 0.0])
-const zero = () => new Float32Array(3)
+const Vector3 = function (x, y, z) {
+    this.values = new Float32Array([x || 0, y || 0, z || 0])
+}
+
+Vector3.forward = function () {
+    return new Vector3(0.0, 0.0, 1.0)
+}
+
+Vector3.left = function () {
+    return new Vector3(1.0, 0.0, 0.0)
+}
+
+Vector3.right = function () {
+    return new Vector3(0.0, 1.0, 0.0)
+}
+
+Vector3.zero = function () {
+    return new Vector3()
+}
 
 export {
-    forward,
-    left,
-    right,
-    zero
+    Vector3
 }

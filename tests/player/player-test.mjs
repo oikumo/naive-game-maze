@@ -6,6 +6,6 @@ test('create player', () => {
     const player = new Player()
     const position = new Float32Array(3)
     const direction = [0.0, 0.0, 1.0]
-    sameArrayElementsOnly(position, player.position)
-    sameArrayElementsOnly(direction, player.direction)
+    sameArrayElementsOnly(position, player.position.values)
+    sameArrayElementsOnly(direction, player.direction.values)
 })
