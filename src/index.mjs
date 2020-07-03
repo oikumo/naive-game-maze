@@ -14,4 +14,5 @@ const renderer = new Renderer(renderTexture, white)
 
 const game = new Game(renderer, lighting)
 const loop = game.step.bind(game)
+
 setInterval(loop, interval)
