@@ -1,6 +1,6 @@
 {
   "name": "naive-game-maze",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Maze game using naive-3d",
   "main": "index.js",
   "scripts": {
