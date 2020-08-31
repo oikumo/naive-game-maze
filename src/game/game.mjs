@@ -1,6 +1,7 @@
-const Game = function (renderer, lighting) {
+const Game = function (renderer, lighting, scene) {
     this.renderer = renderer
     this.lighting = lighting
+    this.scene = scene
 }
 
 const noise = (texture) => {
@@ -11,7 +12,8 @@ const noise = (texture) => {
 
 Game.prototype.step = function () {
     this.renderer.clear(this.lighting.ambientColor)
-    this.renderer.paint(noise)
+    const texture = this.renderer.texture
+    noise(texture)
     this.renderer.draw()
 }
 

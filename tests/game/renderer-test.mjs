@@ -51,13 +51,12 @@ test('renderer draw and paint', () => {
     renderTexture.texture[2] = blue
     renderTexture.texture[3] = black
 
-    const brush = (texture) => {
-        texture[0] = red
-        texture[1] = red
-        texture[2] = red
-        texture[3] = red
-    }
-    renderer.paint(brush)
+    const texture = renderTexture.texture
+    texture[0] = red
+    texture[1] = red
+    texture[2] = red
+    texture[3] = red
+
     renderer.draw()
 
     for (let i = 0; i < canvas.buffer.length; i += 4) {

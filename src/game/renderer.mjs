@@ -3,8 +3,8 @@ const Renderer = function (canvas, renderTex) {
     this.renderTex = renderTex
 }
 
-Renderer.prototype.paint = function (brush) {
-    brush(this.renderTex.texture)
+Renderer.prototype.texture = function () {
+    return this.renderTex.texture
 }
 
 Renderer.prototype.draw = function () {

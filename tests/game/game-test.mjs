@@ -16,7 +16,7 @@ test('game step', () => {
             this.calls++
         }
     }
-    const renderer = new Renderer(canvasRenderSpy, renderTexture, white)
+    const renderer = new Renderer(canvasRenderSpy, renderTexture)
     const game = new Game(renderer, lighting)
     game.step()
     game.step()
