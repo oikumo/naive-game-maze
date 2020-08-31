@@ -6,7 +6,14 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "file": "${workspaceFolder}/dist/index.html"
+            "url": "http://localhost:3000/dist/index.html",
+            "webRoot": "${workspaceFolder}",
+            "pathMappings": [
+                {
+                    "url": "webpack://",
+                    "path": "${workspaceRoot}"
+                }
+            ]
         },
         {
             "type": "node",

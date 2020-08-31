@@ -1,7 +1,9 @@
-const white = 0XFF000000
+const white = 0xFF000000
 const red = 0xFF0000FF
+const black = 0xFFFFFFFF
 
 export {
     white,
-    red
+    red,
+    black
 }

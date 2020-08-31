@@ -7,8 +7,9 @@ const { sameArrayElements } = assertions
 test('renderer create', () => {
     const bytesPerPixel = 4
     const renderTexture = new RenderTexture(1 * bytesPerPixel)
-    const renderer = new Renderer(renderTexture)
-    sameArrayElements(renderTexture, renderer.renderTexture)
+    const canvas = {}
+    const renderer = new Renderer(canvas, renderTexture, 0)
+    sameArrayElements(renderTexture, renderer.renderTex)
 })
 
 test('renderer clear', () => {
@@ -20,10 +21,13 @@ test('renderer clear', () => {
     renderTexture.texture[2] = white
     renderTexture.texture[3] = red
 
-    const renderer = new Renderer(renderTexture, red)
+    const canvas = {}
+    const renderer = new Renderer(canvas, renderTexture)
     const texture = new Uint32Array([white, red, white, red])
-    sameArrayElements(texture, renderer.renderTexture.texture)
-    renderer.clear()
-    const clearColorArr = new Uint32Array([red, red, red, red])
-    sameArrayElements(clearColorArr, renderer.renderTexture.texture)
+    sameArrayElements(texture, renderer.renderTex.texture)
+
+    renderer.clear(red)
+
+    const expected = new Uint32Array([red, red, red, red])
+    sameArrayElements(expected, renderer.renderTex.texture)
 })
