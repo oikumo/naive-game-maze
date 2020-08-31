@@ -3,7 +3,7 @@ const Renderer = function (canvas, renderTex) {
     this.renderTex = renderTex
 }
 
-Renderer.prototype.texture = function () {
+Renderer.prototype.getTexture = function () {
     return this.renderTex.texture
 }
 

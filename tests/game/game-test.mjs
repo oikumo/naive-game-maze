@@ -16,8 +16,14 @@ test('game step', () => {
             this.calls++
         }
     }
+    const scene = {
+        draw: function (texture) {
+
+        }
+    }
+
     const renderer = new Renderer(canvasRenderSpy, renderTexture)
-    const game = new Game(renderer, lighting)
+    const game = new Game(renderer, lighting, scene)
     game.step()
     game.step()
     equals(canvasRenderSpy.calls, 2)
