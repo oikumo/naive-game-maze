@@ -56,7 +56,6 @@ const tryParse = (json) => {
     const o = JSON.parse(json);
     return o;
   } catch (err) {
-    console.log(err);
     return null;
   }
 };
