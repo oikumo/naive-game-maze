@@ -6,8 +6,7 @@ const Game = function (renderer, lighting, world) {
 
 Game.prototype.step = function () {
   this.renderer.clear(this.lighting.ambientColor);
-  const texture = this.renderer.getTexture();
-  this.world.draw(texture);
+  this.world.draw(this.renderer);
   this.renderer.draw();
 };
 

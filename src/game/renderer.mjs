@@ -1,20 +1,28 @@
 const Renderer = function (canvas, renderTex) {
-    this.canvas = canvas
-    this.renderTex = renderTex
-}
+  const getTexture = () => {
+    return renderTex.texture;
+  };
 
-Renderer.prototype.getTexture = function () {
-    return this.renderTex.texture
-}
+  const canvasWidth = () => {
+    return canvas.width;
+  };
 
-Renderer.prototype.draw = function () {
-    this.canvas.draw(this.renderTex.buf8)
-}
+  const draw = () => {
+    canvas.draw(renderTex.buf8);
+  };
 
-Renderer.prototype.clear = function (color) {
-    this.renderTex.clear(color)
-}
+  const clear = (color) => {
+    renderTex.clear(color);
+  };
+
+  return {
+    canvasWidth,
+    getTexture,
+    draw,
+    clear,
+  };
+};
 
 export {
-    Renderer
-}
+  Renderer,
+};

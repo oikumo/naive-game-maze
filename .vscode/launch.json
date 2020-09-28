@@ -12,7 +12,8 @@
                     "url": "webpack://",
                     "path": "${workspaceFolder}"
                 }
-            ]
+            ],
+            "preLaunchTask": "npm: build-dev"
         },
         {
             "type": "node",
