@@ -1,4 +1,4 @@
-import { Vector3 } from '../common/vector.mjs'
+import { Vector3 } from '../../common/vector.mjs'
 
 const Player = function () {
     this.position = Vector3.zero()
