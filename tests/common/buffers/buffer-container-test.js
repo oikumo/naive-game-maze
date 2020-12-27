@@ -1,5 +1,5 @@
 import { test, assertions } from 'naive-tests'
-import { createF32Container } from '../../../src/common/buffers/buffer-container.mjs'
+import { createF32Container } from '../../../src/common/buffers/buffer-container.js'
 const { equals, sameArrayElementsOnly } = assertions
 
 test('container float32 add with expansion', () => {

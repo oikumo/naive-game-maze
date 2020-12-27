@@ -1,4 +1,4 @@
-import { white, black } from '../colors.mjs'
+import { white, black } from '../colors.js'
 
 const Lighting = function (ambientColor, backgroudColor) {
     this.ambientColor = ambientColor || white

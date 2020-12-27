@@ -1,4 +1,4 @@
-import { Stage } from "./stage/stage.mjs";
+import { Stage } from './stage/stage.js';
 
 const Game = function (renderer, lighting) {
   this.renderer = renderer;

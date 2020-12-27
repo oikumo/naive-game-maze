@@ -9,8 +9,12 @@
             "file": "${workspaceFolder}/dist/index.html",
             "pathMappings": [
                 {
-                    "url": "webpack://",
-                    "path": "${workspaceFolder}"
+                    "url": "webpack:/",
+                    "path": "/Users/pedroemilioveasbasso/dev/Apps/naive/naive-game-maze"
+                },
+                {
+                    "url": "webpack:/",
+                    "path": "${workspaceFolder}/src/"
                 }
             ],
             "preLaunchTask": "npm: build-dev"

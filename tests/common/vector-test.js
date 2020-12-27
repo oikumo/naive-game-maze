@@ -1,5 +1,5 @@
 import { test, assertions } from 'naive-tests'
-import { Vector3 } from '../../src/common/vector.mjs'
+import { Vector3 } from '../../src/common/vector.js'
 const { sameArrayElementsOnly } = assertions
 
 test('vector create', () => {
