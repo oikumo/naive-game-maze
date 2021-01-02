@@ -1,5 +1,3 @@
-
-
 const DynamicBuffer = function (blockSize = 100) {
     this.buffers = []
     this.blockSize = blockSize

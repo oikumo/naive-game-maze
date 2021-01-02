@@ -1,9 +1,9 @@
-import { Stage } from "./stage/stage.mjs";
+import { Stage } from './stage/stage.js';
 
-const Game = function (renderer, lighting) {
+const Game = function (renderer, lighting, player) {
   this.renderer = renderer;
   this.lighting = lighting;
-  this.stage = new Stage();
+  this.stage = new Stage(player);
 };
 
 Game.prototype.step = function () {
