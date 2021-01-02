@@ -1,10 +1,10 @@
-import { Vector3 } from '../../common/vector.js'
+import { vector3Forward, vector3Zero } from '../../common/math/vector/vector3.js'
 
-const Player = function () {
-    this.position = Vector3.zero()
-    this.direction = Vector3.forward()
+export function Player() {
+    this.position = vector3Zero();
+    this.direction = vector3Forward();
 }
 
-export {
-    Player
+Player.prototype.moveTo = function (target) {
+    this.position = target;
 }

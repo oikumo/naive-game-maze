@@ -4,5 +4,5 @@ const { sameArrayElementsOnly } = assertions
 
 test('stage create', () => {
     const stage = new Stage();
-    stage.texture.fill(() => 1);
+    //stage.texture.fill(() => 1);
 })
