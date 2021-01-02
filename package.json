@@ -1,30 +1,31 @@
 {
-  "name": "naive-game-maze",
-  "version": "0.0.3",
-  "description": "A Maze game using naive-3d",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test-runner.mjs",
-    "build-prod": "npx webpack --mode production",
-    "build-dev": "npx webpack --mode development",
-    "ins": "npm i"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oikumo/naive-game-maze.git"
-  },
-  "author": "oikumo",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/oikumo/naive-game-maze/issues"
-  },
-  "homepage": "https://github.com/oikumo/naive-game-maze#readme",
-  "dependencies": {
-    "naive-3d": "0.0.38"
-  },
-  "devDependencies": {
-    "naive-tests": "^1.0.19",
-    "webpack": "^5.11.0",
-    "webpack-cli": "^4.2.0"
-  }
+    "type": "module",
+    "name": "naive-game-maze",
+    "version": "0.0.3",
+    "description": "A Maze game using naive-3d",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test-runner.js",
+        "build-prod": "npx webpack --mode production",
+        "build-dev": "npx webpack --mode development",
+        "ins": "npm i"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/oikumo/naive-game-maze.git"
+    },
+    "author": "oikumo",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/oikumo/naive-game-maze/issues"
+    },
+    "homepage": "https://github.com/oikumo/naive-game-maze#readme",
+    "dependencies": {
+        "naive-3d": "0.0.39"
+    },
+    "devDependencies": {
+        "naive-tests": "^1.0.19",
+        "webpack": "^5.11.0",
+        "webpack-cli": "^4.2.0"
+    }
 }

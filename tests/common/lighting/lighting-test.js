@@ -1,6 +1,6 @@
 import { test, assertions } from 'naive-tests'
-import { Lighting } from '../../../src/common/lighting/lighting.mjs'
-import { red, white } from '../../../src/common/colors.mjs'
+import { Lighting } from '../../../src/common/lighting/lighting.js'
+import { red, white } from '../../../src/common/colors.js'
 const { equals, areNotUndefinedOrNull } = assertions
 
 test('lighting create', () => {
