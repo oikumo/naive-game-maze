@@ -3,6 +3,8 @@ import { Stage } from '../../../src/game/stage/stage.js'
 const { sameArrayElementsOnly } = assertions
 
 test('stage create', () => {
-    const stage = new Stage();
+    const renderer = {};
+    const playerInput = { setPlayer: () => { } }
+    const stage = new Stage(renderer, playerInput);
     //stage.texture.fill(() => 1);
 })
