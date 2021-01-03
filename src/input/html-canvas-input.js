@@ -1,17 +1,27 @@
-export function registerScreenInputInCanvas(canvas, screenInput) {
+export function HtmlCanvasCanvas(canvas) {
+    this.canvas = canvas;
+    this.screenInput = null;
+    this.rect = null;
+}
+
+HtmlCanvasCanvas.prototype.update = function () {
+    this.rect = this.canvas.getBoundingClientRect();
+}
+
+HtmlCanvasCanvas.prototype.register = function (screenInput) {
+    this.screenInput = screenInput;
+    this.update();
+
     canvas.onmousemove = (e) => {
-        const rect = canvas.getBoundingClientRect();
-        screenInput.onMove(e.clientX - rect.left, e.clientY - rect.top);
+        this.screenInput.onMove(e.clientX - this.rect.left, e.clientY - this.rect.top);
     }
 
     canvas.onmouseup = (e) => {
-        const rect = canvas.getBoundingClientRect();
-        screenInput.onActionUp(e.clientX - rect.left, e.clientY - rect.top);
+        this.screenInput.onActionUp(e.clientX - this.rect.left, e.clientY - this.rect.top);
     }
 
     canvas.onmousedown = (e) => {
-        const rect = canvas.getBoundingClientRect();
-        screenInput.onActionDown(e.clientX - rect.left, e.clientY - rect.top);
+        this.screenInput.onActionDown(e.clientX - this.rect.left, e.clientY - this.rect.top);
     }
 
     canvas.oncontextmenu = function (e) {
