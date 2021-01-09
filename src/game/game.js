@@ -5,6 +5,7 @@ export function Game(renderer, lighting, playerInput) {
   this.lighting = lighting;
   this.playerInput = playerInput;
   this.stage = new Stage(this.renderer, this.playerInput);
+  this.stage.start();
 }
 
 Game.prototype.step = function () {
