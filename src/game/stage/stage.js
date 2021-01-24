@@ -1,7 +1,7 @@
 import { Entity } from "../entity/entity.js";
 import { EntityController } from "../entity/entity-controller.js";
 import { PlayerAvatar } from "../player/player-avatar.js";
-import { Enemy2d } from "../geometry/enemy2d-mesh.js";
+import { Enemy2d } from "../geometry/complex/enemy2d-mesh.js";
 import { blue } from "../../common/colors.js";
 import { createTexture } from "../../engine/tex.js";
 
