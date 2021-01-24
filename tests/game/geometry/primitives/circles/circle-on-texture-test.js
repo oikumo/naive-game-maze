@@ -1,6 +1,6 @@
 import { test, assertions } from 'naive-tests';
-import { red } from '../../../src/common/colors.js';
-import { createTexture } from '../../../src/engine/tex.js';
+import { red } from '../../../../../src/common/colors.js';
+import { createTexture } from '../../../../../src/engine/tex.js';
 const { equals } = assertions;
 
 test('circle create', () => {
