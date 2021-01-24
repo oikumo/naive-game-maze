@@ -23,7 +23,7 @@ function drawCircle(tex) {
     let yMax = tex.height
 
     const xMid = xMax / 2;
-    const yMid = yMax / 2;    
+    const yMid = yMax / 2;
     const normalizer = xMax / 2;
 
     for (let w = xMax - 1; w >= xMid; --w) {
@@ -44,9 +44,4 @@ function drawCircle(tex) {
 test('circle create', () => {
     const tex = createTexture(50, 50, red);
     tex.fill(() => 0);
-
-    drawCircle(tex);
-    printTex(tex);
-
-    equals(false, true, 'errr');
 });
