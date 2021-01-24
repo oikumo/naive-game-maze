@@ -10,10 +10,6 @@
             "pathMappings": [
                 {
                     "url": "webpack:/",
-                    "path": "/Users/pedroemilioveasbasso/dev/Apps/naive/naive-game-maze"
-                },
-                {
-                    "url": "webpack:/",
                     "path": "${workspaceFolder}/src/"
                 }
             ],
