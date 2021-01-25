@@ -4,7 +4,7 @@ import { createTexture } from '../../../../../src/engine/tex.js';
 import { drawCircleOnTexture } from '../../../../../src/game/geometry/primitives/circles/circle-on-texture.js';
 const { equals } = assertions;
 
-test('circle on texture - create', () => {
+test('circle on texture draw', () => {
     const tex = createTexture(50, 50, white);
     drawCircleOnTexture(tex, red, 0.99);
 
