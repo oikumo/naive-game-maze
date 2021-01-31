@@ -1,7 +1,10 @@
 import { runTests } from 'naive-tests'
 import path from 'path'
 
+// TODO Implement function to run a single test
+
 runTests(path.join(process.cwd(), 'tests'), (err, results) => {
+
     if (err) {
         console.error(`test runner import fails - Error: ${err.message}`)
         console.error(`test runner import fails - Stack: \n${err.stack}`)
