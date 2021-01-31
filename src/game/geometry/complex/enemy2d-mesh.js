@@ -14,7 +14,7 @@ Enemy2d.prototype.draw = function (position, tex, texWidth) {
 
     drawCircleOnTexture(this.tex, color, Math.abs(Math.sin(this.it)));
     drawCircleFillOnTexture(this.tex.pixels, this.tex.width, 150, 100, 50, red);
-    drawCircleFillOnTexture(this.tex.pixels, this.tex.width, 50, 50, 20, green);
+    drawCircleFillOnTexture(this.tex.pixels, this.tex.width, 50, 50, 20, yellow);
     drawCircleFillOnTexture(this.tex.pixels, this.tex.width, 250, 20, 20, color);
 
     this.it += Math.PI * 0.01;
