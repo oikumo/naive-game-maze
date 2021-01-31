@@ -1,6 +1,7 @@
 import { vector3 } from '../../../common/math/vector/vector3.js'
 import { black, blue, green, red, yellow } from '../../../common/colors.js';
 import { drawCircleOnTexture } from '../primitives/circles/circle-on-texture.js'
+import { drawCircleFillOnTexture } from '../primitives/circles/circle-fill-on-texture.js';
 
 export function Enemy2d(width, height, tex) {
     this.tex = tex;
@@ -10,7 +11,11 @@ export function Enemy2d(width, height, tex) {
 
 Enemy2d.prototype.draw = function (position, tex, texWidth) {
     const color = Math.random() > 0.5 ? red : green;
+
     drawCircleOnTexture(this.tex, color, Math.abs(Math.sin(this.it)));
+    drawCircleFillOnTexture(this.tex.pixels, this.tex.width, 150, 100, 50, red);
+    drawCircleFillOnTexture(this.tex.pixels, this.tex.width, 50, 50, 20, green);
+    drawCircleFillOnTexture(this.tex.pixels, this.tex.width, 250, 20, 20, color);
 
     this.it += Math.PI * 0.01;
 
