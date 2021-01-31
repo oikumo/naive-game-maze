@@ -7,5 +7,5 @@ test('lighting create', () => {
     const lighting = new Lighting(red, white)
     areNotUndefinedOrNull(lighting)
     equals(red, lighting.ambientColor)
-    equals(white, lighting.backgroudColor)
+    equals(white, lighting.backgroundColor)
 })
