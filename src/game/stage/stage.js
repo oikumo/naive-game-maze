@@ -4,7 +4,7 @@ import { PlayerAvatar } from "../player/player-avatar.js";
 import { Enemy2d } from "../geometry/complex/enemy2d-mesh.js";
 import { blue, green, red } from "../../common/colors.js";
 import { createTexture } from "../../engine/tex.js";
-import { drawCircleFillOnTexture } from "../geometry/primitives/circles/circle-fill-on-texture.js";
+import { drawCircleFillOnTexture } from "../../engine/geometry/primitives/circle/circle-fill-on-texture.js";
 
 export function Stage(renderer, playerInput) {
   this.renderer = renderer;
