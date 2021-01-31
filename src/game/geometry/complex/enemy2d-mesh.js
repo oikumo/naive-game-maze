@@ -1,8 +1,7 @@
 import { vector3 } from '../../../common/math/vector/vector3.js'
-import { black, blue, green, red, yellow } from '../../../common/colors.js';
+import { green, red, yellow } from '../../../common/colors.js';
 import { drawCircleFillOnTexture } from '../../../engine/geometry/primitives/circle/circle-fill-on-texture.js';
 import { drawCircleOnTexture } from '../../../engine/geometry/primitives/circle/circle-on-texture.js';
-
 
 export function Enemy2d(width, height, tex) {
     this.tex = tex;
