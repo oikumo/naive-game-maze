@@ -1,6 +1,9 @@
+import { Timer } from "../../engine/time/timer.js";
+
 export function Stage(renderer, playerInput) {
   this.renderer = renderer;
   this.playerInput = playerInput;
+  this.timer = new Timer();
   this.level = null;
 }
 
@@ -11,21 +14,18 @@ Stage.prototype.loadLevel = function (level) {
 
 Stage.prototype.start = function () {
   this.playerInput.setPlayer(this.level.player);
-  this.deltaTime = 0;
-  this.lastTime = Date.now() / 1000.0;
+  this.timer.start();
 }
 
 Stage.prototype.tick = function (renderer) {
-  const now = Date.now() / 1000.0;
-  this.deltaTime = now - this.lastTime;
-  this.lastTime = now;
-
+  this.timer.step();
   this.update();
   this.draw(renderer);
 }
 
 Stage.prototype.update = function () {
-  this.level.update(this.deltaTime);
+  const delta = this.timer.deltaSeconds();
+  this.level.update(delta);
 }
 
 Stage.prototype.draw = function (renderer) {
