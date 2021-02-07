@@ -1,9 +1,9 @@
 import { vector3Forward, vector3Zero } from '../../common/math/vector/vector3.js'
 
-export function Entity(mesh) {
+export function Entity(avatar) {
     this.position = vector3Zero();
     this.direction = vector3Forward();
-    this.avatar = mesh;
+    this.avatar = avatar;
 }
 
 Entity.prototype.moveTo = function (target) {

@@ -1,5 +1,5 @@
 import { Stage } from './stage/stage.js';
-import { Level000 } from './levels/level-0/level000.js';
+import { Level000 } from './levels/level-000/level-000.js';
 
 export function Game(renderer, lighting, playerInput) {
   this.renderer = renderer;
