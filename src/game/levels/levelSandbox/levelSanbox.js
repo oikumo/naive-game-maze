@@ -2,7 +2,7 @@ import { Entity } from "../../entity/entity.js";
 import { PlayerAvatar } from "../../player/player-avatar.js";
 import { createTexture, createCheckerTexture } from "../../../engine/tex.js";
 import { blue, green, red } from "../../../common/colors.js";
-import { Polygon2d } from "../../../engine/geometry/complex/polygon.js";
+import { Polygon2d } from "../../../engine/geometry/primitives/polygon/polygon.js";
 import { Point2d } from "../../../engine/geometry/primitives/points/point2D.js";
 
 export function LevelSandbox() {
