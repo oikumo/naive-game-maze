@@ -25,3 +25,11 @@ export function vector3Sub(v2, v1) {
         v2[2] - v1[2]
     );
 }
+
+export function vector3Distance(v1, v2) {
+    const diff = vector3Sub(v1, v2);
+    const d1 = Math.pow(diff[0], 2);
+    const d2 = Math.pow(diff[1], 2);
+    const d3 = Math.pow(diff[2], 2);
+    return Math.sqrt(d1 + d2 + d3);
+}

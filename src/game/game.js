@@ -1,12 +1,12 @@
 import { Stage } from './stage/stage.js';
-import { Level000 } from './levels/level-0/level000.js';
+import { LevelSandbox } from './levels/levelSandbox/levelSanbox.js';
 
 export function Game(renderer, lighting, playerInput) {
   this.renderer = renderer;
   this.lighting = lighting;
   this.playerInput = playerInput;
   this.stage = new Stage(this.renderer, this.playerInput);
-  this.stage.loadLevel(new Level000());
+  this.stage.loadLevel(new LevelSandbox());
   this.stage.start();
 }
 
