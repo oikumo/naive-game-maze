@@ -6,15 +6,15 @@ export function Polygon2d(points, color) {
     this.color = color || red;
 }
 
-Polygon2d.prototype.draw = function (tex) {
+Polygon2d.prototype.draw = function (targetTex) {
     const pointsLength = this.points.length;
     if (pointsLength === 0) return;
     if (pointsLength === 1) {
-        this.points[0].draw(tex);
+        this.points[0].draw(targetTex);
     }
     for (let i = 1; i < pointsLength; i++) {
-        drawLine2D(tex, this.points[i - 1], this.points[i], red);
+        drawLine2D(targetTex, this.points[i - 1], this.points[i], red);
     }
 
-    drawLine2D(tex, this.points[pointsLength - 1], this.points[0], red);
+    drawLine2D(targetTex, this.points[pointsLength - 1], this.points[0], red);
 }
