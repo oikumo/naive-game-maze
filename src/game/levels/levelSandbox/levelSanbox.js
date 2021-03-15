@@ -2,7 +2,7 @@ import { Entity } from "../../entity/entity.js";
 import { PlayerAvatar } from "../../player/player-avatar.js";
 import { createTexture, createCheckerTexture } from "../../../engine/tex.js";
 import { blue, green, red } from "../../../common/colors.js";
-import { Polygon2d } from "../../../engine/geometry/primitives/polygon/polygon.js";
+import { Polygon2dWire } from "../../../engine/geometry/primitives/polygon/polygonWire2d.js";
 import { Point2d } from "../../../engine/geometry/primitives/points/point2D.js";
 
 export function LevelSandbox() {
@@ -13,7 +13,7 @@ export function LevelSandbox() {
 LevelSandbox.prototype.load = function () {
     this.player = new Entity(new PlayerAvatar(50, 50));
     this.tex = createCheckerTexture(250, 250, blue, green);
-    this.polygon2d = new Polygon2d([
+    this.polygon2d = new Polygon2dWire([
         new Point2d(10, 10),
         new Point2d(50, 10),
         new Point2d(50, 50),

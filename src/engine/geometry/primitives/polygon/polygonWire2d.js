@@ -1,12 +1,12 @@
 import { red } from "../../../../common/colors.js";
 import { drawLine2D } from "../line/line-2d.js";
 
-export function Polygon2d(points, color) {
+export function Polygon2dWire(points, color) {
     this.points = points || [];
     this.color = color || red;
 }
 
-Polygon2d.prototype.draw = function (targetTex) {
+Polygon2dWire.prototype.draw = function (targetTex) {
     const pointsLength = this.points.length;
     if (pointsLength === 0) return;
     if (pointsLength === 1) {
