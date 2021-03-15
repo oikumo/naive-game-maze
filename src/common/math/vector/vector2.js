@@ -11,10 +11,17 @@ export function vector2Right() {
 }
 
 export function vector2Zero() {
-    return vector3(0, 0);
+    return vector2(0, 0);
 }
 
 export function vector2SetXY(v, x, y) {
     v[0] = x;
     v[1] = y;
+}
+
+export function vector2Sub(v1, v2) {
+    return vector2(
+        v1[0] - v2[0],
+        v1[1] - v2[1]
+    );
 }

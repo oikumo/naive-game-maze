@@ -1,5 +1,5 @@
 import { red } from "../../../../common/colors.js";
-import { drawLine2D } from "../line/line-2d.js";
+import { drawLine2D } from "../line/line2d.js";
 
 export function Polygon2dWire(points, color) {
     this.points = points || [];
