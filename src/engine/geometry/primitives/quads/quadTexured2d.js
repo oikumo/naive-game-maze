@@ -5,7 +5,37 @@ import { Line2d } from "../line/line2d.js";
 export function QuadTextured2d(points, tex) {
     this.points = points || [];
     this.tex = tex || createCheckerTexture(10, 10, red, green);
-    this.lineDrawer = new Line2d();
+    this.segments = {
+        ab: Line2d([points[0], points[1]]),
+        bd: Line2d([points[1], points[2]]),
+        dc: Line2d([points[2], points[3]]),
+        ca: Line2d([points[3], points[0]])
+    };
+    this.boundingBox = this.generateBoundingBox();
+}
+
+QuadTextured2d.prototype.getTexColor = function (x, y) {
+    
+}
+
+QuadTextured2d.prototype.drawTextured = function (targetTex, dx = 0, dy = 0) {
+    const size = this.boundingBox.size();
+    let col = 0
+    let row = 0
+
+    for (let i = 0; i < size; i++) {
+        if (!insideQuad(col, row)) continue;
+        const color = this.getTexColor(col, row);
+        this.targetTex.pixels = [Math.ceil(dx + col) + Math.ceil(dy + row) * this.targetTex.width];
+
+        if (col + 1 == this.width) {
+            col = 0
+            row++
+        }
+        else {
+            col++
+        }
+    }
 }
 
 QuadTextured2d.prototype.draw = function (targetTex) {
