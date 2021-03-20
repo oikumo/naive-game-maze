@@ -2,8 +2,8 @@ import { test, assertions } from 'naive-tests';
 import { white } from '../../../../../src/common/colors.js';
 import { vector2 } from '../../../../../src/common/math/vector/vector2.js';
 import { Point2d } from '../../../../../src/engine/geometry/primitives/points/point2d.js';
-import { QuadTextured2d } from '../../../../../src/engine/geometry/primitives/quads/quad-textured2d.js';
-import { Quad2d } from '../../../../../src/engine/geometry/primitives/quads/quad2d.js';
+import { QuadTextured2d } from '../../../../../src/engine/geometry/primitives/quads/quad-textured-2d.js';
+import { Quad2d } from '../../../../../src/engine/geometry/primitives/quads/quad-2d.js';
 import { createTexture } from '../../../../../src/engine/tex.js';
 const { equals } = assertions;
 
