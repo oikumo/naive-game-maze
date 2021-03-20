@@ -5,7 +5,7 @@ import { Line2d } from "../line/line2d.js";
 export class QuadTextured2d {
     constructor(quad, tex) {
         this.quad = quad;
-        this.tex = tex || createCheckerTexture(10, 10, red, green);
+        this.tex = tex;
     }
 
     draw(targetTex) {
@@ -21,20 +21,31 @@ export class QuadTextured2d {
             Line2d.draw(targetTex, points[i - 1], points[i], green);
         }
 
-        Line2d.draw(targetTex, points[pointsLength - 1], points[0], red);
+        Line2d.draw(targetTex, points[pointsLength - 1], points[0], green);
     }
 
-    drawTextured(targetTex, dx = 0, dy = 0) {
-        const size = this.boundingBox.size();
-        let col = 0
-        let row = 0
+    drawTextured(targetTex) {
+        const box = this.quad.calculateBoundingBox();
+        const [boxWidth, boxHeight] = box.dimension();
+        const boxSize = box.size();
+        const [dx, dy] = box.topLeft.position;
 
-        for (let i = 0; i < size; i++) {
-            if (!insideQuad(col, row)) continue;
-            const color = this.getTexColor(col, row);
-            this.targetTex.pixels = [Math.ceil(dx + col) + Math.ceil(dy + row) * this.targetTex.width];
+        let inside = false;
+        let prevInside = false;
+        let painting = false;
 
-            if (col + 1 == this.width) {
+        let col = 0;
+        let row = 0;
+
+        for (let i = 0; i < boxSize; i++) {
+            prevInside = inside;
+            inside = this.quad.inside(col + dx, row + dy);
+
+            if (inside) {
+                targetTex.pixels[Math.ceil(dx + col) + Math.ceil(dy + row) * targetTex.width] = red;
+            }
+
+            if (col + 1 == boxWidth) {
                 col = 0
                 row++
             }
