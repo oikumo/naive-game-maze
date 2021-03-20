@@ -14,27 +14,29 @@ export function LevelSandbox() {
 
 LevelSandbox.prototype.load = function () {
     this.player = new Entity(new PlayerAvatar(50, 50));
-    this.tex = createCheckerTexture(250, 250, blue, green);
 
     const quad = new Quad2d([
-        new Point2d(vector2(10, 10)),
+        new Point2d(vector2(11, 10)),
         new Point2d(vector2(50, 10)),
         new Point2d(vector2(50, 50)),
         new Point2d(vector2(10, 60))
     ]);
 
-    this.quadTextured = new QuadTextured2d(quad);
+    const tex = createCheckerTexture(100, 100, blue, green, 50, 50);
+    this.quadTextured = new QuadTextured2d(quad, tex);
 }
 
 LevelSandbox.prototype.update = function (deltaTime) {
 }
 
 LevelSandbox.prototype.draw = function (renderer) {
-    this.tex.paintTo(renderer.tex(), renderer.texWidth(), 300, 300);
-    this.quadTextured.draw({
+    const targetTex = {
         pixels: renderer.tex(),
         width: renderer.texWidth(),
         height: renderer.texWidth()
-    })
+    };
+
+    this.quadTextured.drawTextured(targetTex);
+    this.quadTextured.draw(targetTex);
     this.player.draw(renderer);
 }

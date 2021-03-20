@@ -19,4 +19,8 @@ test('quad textured 2d - create', () => {
     ]);
 
     const quadTextured = new QuadTextured2d(quad, quadTex);
+
+    quadTextured.drawTextured(targetTex);
+
+
 });

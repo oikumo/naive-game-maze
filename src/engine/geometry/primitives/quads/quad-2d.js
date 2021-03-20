@@ -15,4 +15,9 @@ export class Quad2d {
     calculateBoundingBox() {
         return BoundingBox2d.createFromPoints2d(this.points);
     }
+
+    inside(x, y) {
+        return true;
+        //this.segments.ab.
+    }
 }

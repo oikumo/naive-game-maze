@@ -7,6 +7,24 @@ export class BoundingBox2d {
         this.bottomRight = bottomRight;
     }
 
+    get width() {
+        return this.bottomRight.position[0] - this.topLeft.position[0];
+    }
+
+    get height() {
+        return this.bottomRight.position[1] - this.topLeft.position[1];
+    }
+
+    size() {
+        return this.width * this.height;
+    }
+
+    dimension() {
+        const width = this.width;
+        const height = this.height;
+        return [width, height];
+    }
+
     static createFromPoints2d(points) {
         let minX = Number.MAX_SAFE_INTEGER;
         let minY = Number.MAX_SAFE_INTEGER;
