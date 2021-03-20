@@ -1,10 +1,11 @@
 import { Entity } from "../../entity/entity.js";
 import { PlayerAvatar } from "../../player/player-avatar.js";
-import { createTexture, createCheckerTexture } from "../../../engine/tex.js";
+import { createCheckerTexture } from "../../../engine/tex.js";
 import { blue, green, red } from "../../../common/colors.js";
-import { Point2d } from "../../../engine/geometry/primitives/points/point2D.js";
-import { Quad2d, QuadTextured2d } from "../../../engine/geometry/primitives/quads/quad-textured2d.js";
+import { Point2d } from "../../../engine/geometry/primitives/points/point2d.js";
+import { QuadTextured2d } from "../../../engine/geometry/primitives/quads/quad-textured2d.js";
 import { vector2 } from "../../../common/math/vector/vector2.js";
+import { Quad2d } from "../../../engine/geometry/primitives/quads/quad2d.js";
 
 export function LevelSandbox() {
     this.player = null;

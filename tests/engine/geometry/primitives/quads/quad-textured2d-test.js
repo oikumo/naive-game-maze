@@ -1,5 +1,9 @@
 import { test, assertions } from 'naive-tests';
 import { white } from '../../../../../src/common/colors.js';
+import { vector2 } from '../../../../../src/common/math/vector/vector2.js';
+import { Point2d } from '../../../../../src/engine/geometry/primitives/points/point2d.js';
+import { QuadTextured2d } from '../../../../../src/engine/geometry/primitives/quads/quad-textured2d.js';
+import { Quad2d } from '../../../../../src/engine/geometry/primitives/quads/quad2d.js';
 import { createTexture } from '../../../../../src/engine/tex.js';
 const { equals } = assertions;
 
@@ -7,12 +11,12 @@ test('quad textured 3d - create', () => {
     const targetTex = createTexture(300, 300, white);
     const quadTex = createTexture(100, 100, white);
 
-    const quad = {
-        ab: Line2d([points[0], points[1]]),
-        bd: Line2d([points[1], points[2]]),
-        dc: Line2d([points[2], points[3]]),
-        ca: Line2d([points[3], points[0]])
-    };
+    const quad = new Quad2d([
+        new Point2d(vector2(10, 10)),
+        new Point2d(vector2(50, 10)),
+        new Point2d(vector2(50, 50)),
+        new Point2d(vector2(10, 60))
+    ]);
 
-
+    const quadTextured = new QuadTextured2d(quad, quadTex);
 });
