@@ -1,5 +1,5 @@
 import { red } from "../../../../common/colors.js";
-import { vector2Sub, vector2Zero } from "../../../../common/math/vector/vector2.js";
+import { vector2Sub, vector2Zero, vectorsAreEquals } from "../../../../common/math/vector/vector2.js";
 
 export function Point2d(position, color = red) {
     this.position = position || vector2Zero();
@@ -8,6 +8,10 @@ export function Point2d(position, color = red) {
 
 Point2d.delta = function (a, b) {
     return vector2Sub(a.position, b.position);
+}
+
+Point2d.samePosition = function (p, q) {
+    return vectorsAreEquals(p.position, q.position);
 }
 
 Point2d.prototype.draw = function (tex) {
