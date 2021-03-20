@@ -1,5 +1,5 @@
 import { red } from "../../../../common/colors.js";
-import { Point2d } from "../points/point2D.js";
+import { Point2d } from "../points/point2d.js";
 
 export function Line2d(a, b, color) {
     this.a = a || new Point2d();
