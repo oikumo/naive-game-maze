@@ -18,6 +18,5 @@ screenInput.register(playerInput);
 const lighting = new Lighting(white, black);
 
 const game = new Game(renderer, lighting, playerInput);
-const loop = game.step.bind(game);
 
-setInterval(loop, intervalMilliSeconds);
+setInterval(() => game.step(), intervalMilliSeconds);

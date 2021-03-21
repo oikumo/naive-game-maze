@@ -12,6 +12,17 @@ export class Line2d {
         Line2d.draw(tex, this.a, this.b, this.color);
     }
 
+    getXAt(y) {
+        const deltaX = this.b.position[0] - this.a.position[0];
+        if (deltaX === 0) return 0;
+        const deltaY = this.b.position[1] - this.a.position[1];
+
+        const slope = deltaY / deltaX;
+        const x = this.a.position[0] + ((y - this.a.position[1]) / slope);
+
+        return Math.floor(x);
+    }
+
     static draw(tex, p, q, color) {
         const delta = Point2d.delta(q, p);
         const n = Math.max(Math.abs(delta[0]), Math.abs(delta[1]));

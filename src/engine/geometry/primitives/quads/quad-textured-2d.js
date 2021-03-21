@@ -1,4 +1,5 @@
-import { green, red } from "../../../../common/colors.js";
+import { texture2bmp } from "naive-3d";
+import { green, red, yellow } from "../../../../common/colors.js";
 import { createCheckerTexture } from "../../../tex.js";
 import { Line2d } from "../line/line2d.js";
 
@@ -28,26 +29,29 @@ export class QuadTextured2d {
         const box = this.quad.calculateBoundingBox();
         const [boxWidth, boxHeight] = box.dimension();
         const boxSize = box.size();
-        const [dx, dy] = box.topLeft.position;
-
-        let inside = false;
-        let prevInside = false;
-        let painting = false;
+        let [dx, dy] = box.topLeft.position;
 
         let col = 0;
         let row = 0;
+        let scanLine = Math.floor(this.quad.scanLine(row + dy));
+        let scanLineEnd = Math.floor(this.quad.scanLineEnd(row + dy));
+        let color;
 
         for (let i = 0; i < boxSize; i++) {
-            prevInside = inside;
-            inside = this.quad.inside(col + dx, row + dy);
 
-            if (inside) {
-                targetTex.pixels[Math.ceil(dx + col) + Math.ceil(dy + row) * targetTex.width] = red;
+            if (scanLine < col + dx && scanLineEnd > col + dx) {
+                const u = Math.floor((col / boxWidth) * this.tex.width);
+                const v = Math.floor((row / boxHeight) * this.tex.height);
+
+                color = this.tex.pixels[u + (this.tex.width * v)];
+                targetTex.pixels[Math.ceil(dx + col) + Math.ceil(dy + row) * targetTex.width] = color;
             }
 
             if (col + 1 == boxWidth) {
-                col = 0
-                row++
+                col = 0;
+                row++;
+                scanLine = Math.floor(this.quad.scanLine(row + dy));
+                scanLineEnd = Math.floor(this.quad.scanLineEnd(row + dy));
             }
             else {
                 col++
