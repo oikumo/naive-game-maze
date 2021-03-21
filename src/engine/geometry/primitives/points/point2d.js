@@ -1,6 +1,6 @@
 import { red } from "../../../../common/colors.js";
 import { vector2Distance, vector2lerp } from "../../../../common/math/vector/vector2-utils.js";
-import { vector2Sub, vector2Zero, vectorsAreEquals } from "../../../../common/math/vector/vector2.js";
+import { vector2AreEquals, vector2Sub, vector2Zero } from "../../../../common/math/vector/vector2.js";
 
 export function Point2d(position, color = red) {
     this.position = position || vector2Zero();
@@ -20,7 +20,7 @@ Point2d.lerp = function (a, b, t) {
 }
 
 Point2d.samePosition = function (p, q) {
-    return vectorsAreEquals(p.position, q.position);
+    return vector2AreEquals(p.position, q.position);
 }
 
 Point2d.prototype.draw = function (tex) {
