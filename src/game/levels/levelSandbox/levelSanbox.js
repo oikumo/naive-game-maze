@@ -7,36 +7,37 @@ import { QuadTextured2d } from "../../../engine/geometry/primitives/quads/quad-t
 import { vector2 } from "../../../common/math/vector/vector2.js";
 import { Quad2d } from "../../../engine/geometry/primitives/quads/quad-2d.js";
 
-export function LevelSandbox() {
-    this.player = null;
-    this.radiusStep = 0;
-}
+export class LevelSandbox {
+    constructor() {
+        this.player = null;
+        this.radiusStep = 0;
+    }
 
-LevelSandbox.prototype.load = function () {
-    this.player = new Entity(new PlayerAvatar(50, 50));
+    load() {
+        this.player = new Entity(new PlayerAvatar(50, 50));
 
-    const quad = new Quad2d([
-        new Point2d(vector2(11, 10)),
-        new Point2d(vector2(50, 10)),
-        new Point2d(vector2(50, 50)),
-        new Point2d(vector2(10, 60))
-    ]);
+        const quad = new Quad2d([
+            new Point2d(vector2(40, 80)),
+            new Point2d(vector2(80, 40)),
+            new Point2d(vector2(140, 100)),
+            new Point2d(vector2(80, 140))
+        ]);
 
-    const tex = createCheckerTexture(100, 100, blue, green, 50, 50);
-    this.quadTextured = new QuadTextured2d(quad, tex);
-}
+        const tex = createCheckerTexture(100, 100, blue, green, 10, 10);
+        this.quadTextured = new QuadTextured2d(quad, tex);
+    }
 
-LevelSandbox.prototype.update = function (deltaTime) {
-}
+    update(deltaTime) {
+    }
 
-LevelSandbox.prototype.draw = function (renderer) {
-    const targetTex = {
-        pixels: renderer.tex(),
-        width: renderer.texWidth(),
-        height: renderer.texWidth()
-    };
+    draw(renderer) {
+        const targetTex = {
+            pixels: renderer.tex(),
+            width: renderer.texWidth(),
+            height: renderer.texWidth()
+        };
 
-    this.quadTextured.drawTextured(targetTex);
-    this.quadTextured.draw(targetTex);
-    this.player.draw(renderer);
+        this.quadTextured.drawTextured(targetTex);
+        this.player.draw(renderer);
+    }
 }
