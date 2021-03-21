@@ -23,7 +23,7 @@ export class LevelSandbox {
             new Point2d(vector2(80, 140))
         ]);
 
-        const tex = createCheckerTexture(100, 100, blue, green, 10, 10);
+        const tex = createCheckerTexture(100, 100, blue, green, 20, 20);
         this.quadTextured = new QuadTextured2d(quad, tex);
     }
 
