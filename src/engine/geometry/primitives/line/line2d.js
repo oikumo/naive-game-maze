@@ -1,4 +1,5 @@
 import { red } from "../../../../common/colors.js";
+import { vector2 } from "../../../../common/math/vector/vector2.js";
 import { Point2d } from "../points/point2d.js";
 
 export class Line2d {
