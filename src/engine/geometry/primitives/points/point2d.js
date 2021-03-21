@@ -1,4 +1,5 @@
 import { red } from "../../../../common/colors.js";
+import { vector2Distance, vector2lerp } from "../../../../common/math/vector/vector2-utils.js";
 import { vector2Sub, vector2Zero, vectorsAreEquals } from "../../../../common/math/vector/vector2.js";
 
 export function Point2d(position, color = red) {
@@ -8,6 +9,14 @@ export function Point2d(position, color = red) {
 
 Point2d.delta = function (a, b) {
     return vector2Sub(a.position, b.position);
+}
+
+Point2d.distance = function (a, b) {
+    return vector2Distance(a.position, b.position);
+}
+
+Point2d.lerp = function (a, b, t) {
+    return new Point2d(vector2lerp(a.position, b.position, t));
 }
 
 Point2d.samePosition = function (p, q) {
