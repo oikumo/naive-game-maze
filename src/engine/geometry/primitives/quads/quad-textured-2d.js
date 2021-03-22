@@ -47,8 +47,8 @@ export class QuadTextured2d {
                 let rPrimaX = quadScanline.beginLineT * this.tex.width;
                 let sPrimaY = quadScanline.endLineT * this.tex.height;
 
-                let rP = new Point2d(vector2(rPrimaX, 0));
-                let sP = new Point2d(vector2(this.tex.width, sPrimaY));
+                let rP = new Point2d(rPrimaX, 0);
+                let sP = new Point2d(this.tex.width, sPrimaY);
 
                 let tP = (pIndex) / quadScanline.quadScanLineSize;
                 let p = Point2d.lerp(rP, sP, tP);

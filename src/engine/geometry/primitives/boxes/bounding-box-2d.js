@@ -1,4 +1,3 @@
-import { vector2 } from "../../../../common/math/vector/vector2.js";
 import { Point2d } from "../points/point2d.js";
 
 export class BoundingBox2d {
@@ -46,8 +45,8 @@ export class BoundingBox2d {
             }
         }
 
-        let topLeft = new Point2d(vector2(minX, minY));
-        let bottomRight = new Point2d(vector2(maxX, maxY));
+        let topLeft = new Point2d(minX, minY);
+        let bottomRight = new Point2d(maxX, maxY);
         const boundingBox = new BoundingBox2d(topLeft, bottomRight);
 
         return boundingBox;

@@ -1,4 +1,3 @@
-import { vector2 } from "../../../../common/math/vector/vector2.js";
 import { Point2d } from "../points/point2d.js";
 
 export class Quad2dScanline {
@@ -38,8 +37,8 @@ export class Quad2dScanline {
         this.endX = Math.floor(this.endLine.getXAt(y));
         this.quadScanLineSize = this.endX - this.beginX;
 
-        this.beginLineT = this.getTinLine(this.beginLine, new Point2d(vector2(this.beginX, y)));
-        this.endLineT = this.getTinLine(this.endLine, new Point2d(vector2(this.endX, y)));
+        this.beginLineT = this.getTinLine(this.beginLine, new Point2d(this.beginX, y));
+        this.endLineT = this.getTinLine(this.endLine, new Point2d(this.endX, y));
     }
 
     getTinLine(line, point) {
