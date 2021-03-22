@@ -17,13 +17,13 @@ export class LevelSandbox {
         this.player = new Entity(new PlayerAvatar(50, 50));
 
         const quad = new Quad2d([
-            new Point2d(vector2(40, 80)),
-            new Point2d(vector2(80, 40)),
-            new Point2d(vector2(140, 100)),
-            new Point2d(vector2(80, 140))
+            new Point2d(40, 80),
+            new Point2d(80, 40),
+            new Point2d(140, 100),
+            new Point2d(80, 140)
         ]);
 
-        const tex = createCheckerTexture(100, 100, blue, green, 10, 10);
+        const tex = createCheckerTexture(100, 100, blue, green, 20, 20);
         this.quadTextured = new QuadTextured2d(quad, tex);
     }
 

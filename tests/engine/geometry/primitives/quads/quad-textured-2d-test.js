@@ -12,10 +12,10 @@ test('quad textured 2d - create', () => {
     const quadTex = createTexture(100, 100, white);
 
     const quad = new Quad2d([
-        new Point2d(vector2(10, 10)),
-        new Point2d(vector2(50, 10)),
-        new Point2d(vector2(50, 50)),
-        new Point2d(vector2(10, 60))
+        new Point2d(10, 10),
+        new Point2d(50, 10),
+        new Point2d(50, 50),
+        new Point2d(10, 60)
     ]);
 
     const quadTextured = new QuadTextured2d(quad, quadTex);

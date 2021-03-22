@@ -21,7 +21,7 @@ export class Line2d {
         const slope = deltaY / deltaX;
         const x = this.a.position[0] + ((y - this.a.position[1]) / slope);
 
-        return Math.floor(x);
+        return x;
     }
 
     static draw(tex, p, q, color) {

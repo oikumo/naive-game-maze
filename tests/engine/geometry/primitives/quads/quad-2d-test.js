@@ -6,14 +6,14 @@ const { equals } = assertions;
 
 test('quad 2d - create', () => {
     const quad = new Quad2d([
-        new Point2d(vector2(20, 20)),
-        new Point2d(vector2(30, 10)),
-        new Point2d(vector2(40, 30)),
-        new Point2d(vector2(30, 50))
+        new Point2d(20, 20),
+        new Point2d(30, 10),
+        new Point2d(40, 30),
+        new Point2d(30, 50)
     ]);
 
     const box = quad.calculateBoundingBox();
 
-    equals(true, Point2d.samePosition(box.topLeft, new Point2d(vector2(20, 10))));
-    equals(true, Point2d.samePosition(box.bottomRight, new Point2d(vector2(40, 50))));
+    equals(true, Point2d.samePosition(box.topLeft, new Point2d(20, 10)));
+    equals(true, Point2d.samePosition(box.bottomRight, new Point2d(40, 50)));
 });

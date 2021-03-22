@@ -1,36 +1,49 @@
 import { red } from "../../../../common/colors.js";
 import { vector2Distance, vector2lerp } from "../../../../common/math/vector/vector2-utils.js";
-import { vector2Sub, vector2Zero, vectorsAreEquals } from "../../../../common/math/vector/vector2.js";
+import { vector2, vector2AreEquals, vector2Sub, vector2Zero } from "../../../../common/math/vector/vector2.js";
 
-export function Point2d(position, color = red) {
-    this.position = position || vector2Zero();
-    this.color = color;
-}
+export class Point2d {
+    constructor(x, y) {
+        this.position = vector2(x, y);
+    }
 
-Point2d.delta = function (a, b) {
-    return vector2Sub(a.position, b.position);
-}
+    get x() {
+        return this.position[0];
+    }
 
-Point2d.distance = function (a, b) {
-    return vector2Distance(a.position, b.position);
-}
+    get y() {
+        return this.position[1];
+    }
 
-Point2d.lerp = function (a, b, t) {
-    return new Point2d(vector2lerp(a.position, b.position, t));
-}
+    static fromVector2(vector2) {
+        return new Point2d(vector2[0], vector2[1]);
+    }
 
-Point2d.samePosition = function (p, q) {
-    return vectorsAreEquals(p.position, q.position);
-}
+    static draw(tex, point, color) {
+        const x = Math.floor(point.x);
+        if (x < 0 || x >= tex.width)
+            return;
 
-Point2d.prototype.draw = function (tex) {
-    const x = Math.floor(this.position[0]);
-    if (x < 0 || x >= tex.width)
-        return;
+        const y = Math.floor(point.y);
+        if (y < 0 || y >= tex.height)
+            return;
 
-    const y = Math.floor(this.position[1]);
-    if (y < 0 || y >= tex.height)
-        return;
+        tex.pixels[Math.floor(y * tex.width) + x] = color;
+    }
 
-    tex.pixels[Math.floor(y * tex.width) + x] = this.color;
+    static delta(a, b) {
+        return Point2d.fromVector2(vector2Sub(a.position, b.position));
+    }
+
+    static distance(a, b) {
+        return vector2Distance(a.position, b.position);
+    }
+
+    static lerp(a, b, t) {
+        return Point2d.fromVector2(vector2lerp(a.position, b.position, t));
+    }
+
+    static samePosition(p, q) {
+        return vector2AreEquals(p.position, q.position);
+    }
 }
