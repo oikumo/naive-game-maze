@@ -3,14 +3,9 @@ import { vector2 } from "../../../../common/math/vector/vector2.js";
 import { Point2d } from "../points/point2d.js";
 
 export class Line2d {
-    constructor(a, b, color) {
+    constructor(a, b) {
         this.a = a || new Point2d();
         this.b = b || new Point2d();
-        this.color = color || red;
-    }
-
-    draw(tex) {
-        Line2d.draw(tex, this.a, this.b, this.color);
     }
 
     getXAt(y) {
@@ -22,6 +17,11 @@ export class Line2d {
         const x = this.a.position[0] + ((y - this.a.position[1]) / slope);
 
         return x;
+    }
+
+    static equal(line1, line2) {
+        return Point2d.equals(line1.a, line2.a) && Point2d.equal(line1.b, line2.b);
+
     }
 
     static draw(tex, p, q, color) {

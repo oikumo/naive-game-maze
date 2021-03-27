@@ -43,7 +43,7 @@ export class Point2d {
         return Point2d.fromVector2(vector2lerp(a.position, b.position, t));
     }
 
-    static samePosition(p, q) {
+    static equal(p, q) {
         return vector2AreEquals(p.position, q.position);
     }
 }

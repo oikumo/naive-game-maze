@@ -1,7 +1,5 @@
-import { vector2 } from "../../../../common/math/vector/vector2.js";
 import { BoundingBox2d } from "../boxes/bounding-box-2d.js";
 import { Line2d } from "../line/line2d.js";
-import { Point2d } from "../points/point2d.js";
 
 export class Quad2d {
     constructor(points) {

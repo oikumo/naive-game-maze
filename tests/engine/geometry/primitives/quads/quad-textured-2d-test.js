@@ -1,6 +1,5 @@
 import { test, assertions } from 'naive-tests';
 import { white } from '../../../../../src/common/colors.js';
-import { vector2 } from '../../../../../src/common/math/vector/vector2.js';
 import { Point2d } from '../../../../../src/engine/geometry/primitives/points/point2d.js';
 import { QuadTextured2d } from '../../../../../src/engine/geometry/primitives/quads/quad-textured-2d.js';
 import { Quad2d } from '../../../../../src/engine/geometry/primitives/quads/quad-2d.js';
@@ -12,15 +11,10 @@ test('quad textured 2d - create', () => {
     const quadTex = createTexture(100, 100, white);
 
     const quad = new Quad2d([
-        new Point2d(10, 10),
-        new Point2d(50, 10),
-        new Point2d(50, 50),
-        new Point2d(10, 60)
+        new Point2d(10, 10), new Point2d(50, 10),
+        new Point2d(50, 50), new Point2d(10, 60)
     ]);
 
     const quadTextured = new QuadTextured2d(quad, quadTex);
-
     quadTextured.drawTextured(targetTex);
-
-
 });
