@@ -33,8 +33,8 @@ export class Quad2dScanline {
             this.reversedProjection = true;
         }
 
-        this.beginX = Math.floor(this.beginLine.getXAt(y));
-        this.endX = Math.floor(this.endLine.getXAt(y));
+        this.beginX = Math.floor(this.beginLine.getXfromY(y));
+        this.endX = Math.floor(this.endLine.getXfromY(y));
         this.quadScanLineSize = this.endX - this.beginX;
 
         this.beginLineT = this.getTinLine(this.beginLine, new Point2d(this.beginX, y));

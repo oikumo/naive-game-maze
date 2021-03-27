@@ -6,7 +6,7 @@ export class Line2d {
         this.b = b || new Point2d();
     }
 
-    getXAt(y) {
+    getXfromY(y) {
         const deltaX = this.b.position[0] - this.a.position[0];
         if (deltaX === 0) return 0;
         const deltaY = this.b.position[1] - this.a.position[1];
