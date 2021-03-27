@@ -10,8 +10,8 @@ test('bounding box 2d - create', () => {
     ];
 
     const box = BoundingBox2d.createFromPoints2d(points);
-    equals(true, Point2d.equal(box.topLeft, new Point2d(20, 10)));
-    equals(true, Point2d.equal(box.bottomRight, new Point2d(40, 50)));
+    equals(true, Point2d.equals(box.topLeft, new Point2d(20, 10)));
+    equals(true, Point2d.equals(box.bottomRight, new Point2d(40, 50)));
 });
 
 test('bounding box 2d - are equals', () => {

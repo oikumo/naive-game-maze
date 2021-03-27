@@ -1,5 +1,3 @@
-import { red } from "../../../../common/colors.js";
-import { vector2 } from "../../../../common/math/vector/vector2.js";
 import { Point2d } from "../points/point2d.js";
 
 export class Line2d {
@@ -19,9 +17,8 @@ export class Line2d {
         return x;
     }
 
-    static equal(line1, line2) {
-        return Point2d.equals(line1.a, line2.a) && Point2d.equal(line1.b, line2.b);
-
+    static equals(line1, line2) {
+        return Point2d.equals(line1.a, line2.a) && Point2d.equals(line1.b, line2.b);
     }
 
     static draw(tex, p, q, color) {

@@ -53,7 +53,7 @@ export class BoundingBox2d {
     }
 
     static areEquals(bb1, bb2) {
-        return Point2d.equal(bb1.topLeft, bb2.topLeft) &&
-            Point2d.equal(bb1.bottomRight, bb2.bottomRight);
+        return Point2d.equals(bb1.topLeft, bb2.topLeft) &&
+            Point2d.equals(bb1.bottomRight, bb2.bottomRight);
     }
 }
