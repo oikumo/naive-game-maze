@@ -24,6 +24,6 @@ test('quad 2d - calculate bounding box', () => {
         new Point2d(40, 30), new Point2d(30, 50),
     ]);
     const box = quad.calculateBoundingBox();
-    equals(true, Point2d.equals(box.topLeft, new Point2d(20, 10)));
-    equals(true, Point2d.equals(box.bottomRight, new Point2d(40, 50)));
+    equals(true, Point2d.equals(box.topLeft, new Point2d(20, 50)));
+    equals(true, Point2d.equals(box.bottomRight, new Point2d(40, 10)));
 });

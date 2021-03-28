@@ -10,6 +10,13 @@ test('point2d', () => {
     equals(2, point.y);
 });
 
+test('point2d - translate', () => {
+    const point = new Point2d(1, 2);
+    Point2d.translate(point, 5, -6);
+    equals(6, point.x);
+    equals(-4, point.y);
+});
+
 test('point2d - delta', () => {
     const delta1 = Point2d.delta(new Point2d(1, 2), new Point2d(1, 2));
     const delta2 = Point2d.delta(new Point2d(1, 3), new Point2d(-1, 100));

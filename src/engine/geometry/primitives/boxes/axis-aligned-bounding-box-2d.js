@@ -1,17 +1,23 @@
 import { Point2d } from "../points/point2d.js";
 
-export class BoundingBox2d {
+export class AxisAlignedBoundingBox2d {
     constructor(topLeft, bottomRight) {
         this.topLeft = topLeft;
         this.bottomRight = bottomRight;
     }
 
+    center() {
+        const centerX = this.topLeft.x + (this.width / 2);
+        const centerY = this.bottomRight.y + (this.height / 2);
+        return new Point2d(centerX, centerY);
+    }
+
     get width() {
-        return this.bottomRight.position[0] - this.topLeft.position[0];
+        return this.bottomRight.x - this.topLeft.x;
     }
 
     get height() {
-        return this.bottomRight.position[1] - this.topLeft.position[1];
+        return this.topLeft.y - this.bottomRight.y;
     }
 
     size() {
@@ -45,9 +51,9 @@ export class BoundingBox2d {
             }
         }
 
-        let topLeft = new Point2d(minX, minY);
-        let bottomRight = new Point2d(maxX, maxY);
-        const boundingBox = new BoundingBox2d(topLeft, bottomRight);
+        let topLeft = new Point2d(minX, maxY);
+        let bottomRight = new Point2d(maxX, minY);
+        const boundingBox = new AxisAlignedBoundingBox2d(topLeft, bottomRight);
 
         return boundingBox;
     }

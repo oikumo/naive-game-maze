@@ -1,6 +1,5 @@
-import { red } from "../../../../common/colors.js";
-import { vector2Distance, vector2lerp } from "../../../../common/math/vector/vector2-utils.js";
-import { vector2, vector2AreEquals, vector2Sub, vector2Zero } from "../../../../common/math/vector/vector2.js";
+import { vector2Distance, vector2lerp, vector2Translate } from "../../../../common/math/vector/vector2-utils.js";
+import { vector2, vector2AreEquals, vector2Sub } from "../../../../common/math/vector/vector2.js";
 
 export class Point2d {
     constructor(x, y) {
@@ -13,6 +12,10 @@ export class Point2d {
 
     get y() {
         return this.position[1];
+    }
+
+    static translate(point, dx, dy) {
+        vector2Translate(point.position, dx, dy);
     }
 
     static fromVector2(vector2) {

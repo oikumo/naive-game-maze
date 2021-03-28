@@ -1,8 +1,8 @@
 import { vector2, vector2Zero } from "./vector2.js";
 
-export function vector2Translate(v, delta) {
-    v[0] += delta[0];
-    v[1] += delta[1];
+export function vector2Translate(v, dx, dy) {
+    v[0] += dx;
+    v[1] += dy;
 }
 
 export function vector2lerp(v, target, t = 1) {
