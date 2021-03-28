@@ -6,15 +6,20 @@ export class Line2d {
         this.b = b || new Point2d();
     }
 
+    isPerpendicularToXAxis() {
+        return this.a.position[0] - this.b.position[0] === 0;
+    }
+
+    slope() {
+        if (this.isPerpendicularToXAxis()) return null;
+        const delta = Point2d.delta(this.b, this.a);
+        return delta.y / delta.x;
+    }
+
     getXfromY(y) {
-        const deltaX = this.b.position[0] - this.a.position[0];
-        if (deltaX === 0) return 0;
-        const deltaY = this.b.position[1] - this.a.position[1];
-
-        const slope = deltaY / deltaX;
-        const x = this.a.position[0] + ((y - this.a.position[1]) / slope);
-
-        return x;
+        const slope = this.slope();
+        if (!slope) return null;
+        return this.a.position[0] + ((y - this.a.position[1]) / slope);
     }
 
     static equals(line1, line2) {
