@@ -4,7 +4,6 @@ import { Point2d } from '../../../../../src/engine/geometry/primitives/points/po
 import { Quad2dScanline } from '../../../../../src/engine/geometry/primitives/quads/quad-2d-scanline.js';
 import { Quad2d } from '../../../../../src/engine/geometry/primitives/quads/quad-2d.js';
 import { createCheckerTexture } from '../../../../../src/engine/tex.js';
-const { equals } = assertions;
 
 test('quad 2d - get scanline', () => {
     const tex = createCheckerTexture(100, 100, blue, green, 10, 10);

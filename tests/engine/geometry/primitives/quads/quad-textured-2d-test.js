@@ -4,7 +4,6 @@ import { Point2d } from '../../../../../src/engine/geometry/primitives/points/po
 import { QuadTextured2d } from '../../../../../src/engine/geometry/primitives/quads/quad-textured-2d.js';
 import { Quad2d } from '../../../../../src/engine/geometry/primitives/quads/quad-2d.js';
 import { createTexture } from '../../../../../src/engine/tex.js';
-const { equals } = assertions;
 
 test('quad textured 2d - create', () => {
     const targetTex = createTexture(300, 300, white);
