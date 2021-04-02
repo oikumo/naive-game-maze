@@ -14,12 +14,36 @@ export class Point2d {
         return this.position[1];
     }
 
+    static getPointsOrderedByAsc(points) {
+        const cloned = Point2d.cloneList(points);
+        cloned.sort((a, b) => { return a.x - b.x; });
+        return cloned;
+    }
+
     static translate(point, dx, dy) {
         vector2Translate(point.position, dx, dy);
     }
 
     static fromVector2(vector2) {
         return new Point2d(vector2[0], vector2[1]);
+    }
+
+    static clone(point) {
+        return new Point2d(point.x, point.y);
+    }
+
+    static cloneList(points) {
+        if (!points) return [];
+        const cloned = new Array(points.length);
+        for (let i = points.length - 1; i >= 0; --i) {
+            cloned[i] = Point2d.clone(points[i]);
+
+        }
+        return cloned;
+    }
+
+    static sameX(a, b) {
+        return a.x === b.x;
     }
 
     static draw(tex, point, color) {

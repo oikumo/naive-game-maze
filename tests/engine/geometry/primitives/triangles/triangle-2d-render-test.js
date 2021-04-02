@@ -8,11 +8,35 @@ const { equals } = assertions;
 test('triangle 2d render - create', () => {
     const a = new Point2d(0, 0), b = new Point2d(0, 10), c = new Point2d(20, 0);
     const triangle = new Triangle2d(a, b, c);
-    const triangleRenderer = Triangle2dRender.create(triangle);
 
-    const upperVert = new Line2d(c, b);
-    const lowerVert = new Line2d(c, a);
-    equals(true, Point2d.equals(triangleRenderer.pivot, c));
-    equals(true, Line2d.equals(triangleRenderer.upperVert, upperVert));
-    equals(true, Line2d.equals(triangleRenderer.lowerVert, lowerVert));
+    const triangleRenderer = Triangle2dRender.create(triangle);
+    const leftArc = triangleRenderer.leftArc;
+    //equals(true, Point2d.equals(c, leftArc.pivot));
+
+});
+
+test('triangle 2d render - get left point', () => {
+    const a = new Point2d(0, 0), b = new Point2d(5, 10), c = new Point2d(20, 0);
+    const triangle = new Triangle2d(a, b, c);
+
+    //const leftPoint = Triangle2dRender.getLeftPoint(triangle);
+    //equals(true, Point2d.equals(leftPoint, a));
+
+});
+
+test('triangle 2d render - create render arc', () => {
+    const a = new Point2d(0, 0), b = new Point2d(0, 10), c = new Point2d(20, 0);
+    const triangle = new Triangle2d(a, b, c);
+
+    const arc = Triangle2dRender.createRendererArcIfSegmentParallelToY(triangle);
+    equals(true, Point2d.equals(arc.pivot, c));
+    equals(true, Line2d.equals(arc.upperVert, new Line2d(c, b)));
+    equals(true, Line2d.equals(arc.lowerVert, new Line2d(c, a)));
+});
+
+test('triangle 2d render - create render arc - null if not segment is not parallel to y axis', () => {
+    const a = new Point2d(0, 0), b = new Point2d(5, 10), c = new Point2d(20, 0);
+    const triangleNotParallel = new Triangle2d(a, b, c);
+    const arcNull = Triangle2dRender.createRendererArcIfSegmentParallelToY(triangleNotParallel);
+    equals(true, arcNull === null);
 });
