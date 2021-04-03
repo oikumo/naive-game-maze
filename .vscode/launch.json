@@ -2,18 +2,12 @@
     "version": "0.3.0",
     "configurations": [
         {
-            "name": "Launch Maze",
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "file": "${workspaceFolder}/dist/index.html",
-            "pathMappings": [
-                {
-                    "url": "webpack:/",
-                    "path": "${workspaceFolder}/src/"
-                }
-            ],
-            "preLaunchTask": "npm: build-dev"
+            "name": "Launch localhost 3000",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
         },
         {
             "type": "node",
