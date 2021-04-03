@@ -1,9 +1,9 @@
 import { createTexture } from '../../engine/tex.js';
 import { vector3 } from '../../common/math/vector/vector3.js'
-import { red } from '../../common/colors.js';
+import { green, red, yellow } from '../../common/colors.js';
 
 export function PlayerAvatar(width, height) {
-    this.tex = createTexture(width, height, red);
+    this.tex = createTexture(width, height, yellow);
     this.offset = vector3(width * 0.5, height * 0.5, 0);
 }
 

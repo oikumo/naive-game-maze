@@ -1,4 +1,5 @@
-import { vector3Forward, vector3Zero } from '../../common/math/vector/vector3.js'
+import { vector3Zero, vector3Forward } from "../../common/math/vector/vector3.js";
+
 
 export function Entity(avatar) {
     this.position = vector3Zero();

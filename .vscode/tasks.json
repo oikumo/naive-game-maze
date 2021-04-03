@@ -11,14 +11,6 @@
 			"problemMatcher": [],
 			"label": "test",
 			"detail": "node test-runner.mjs"
-		},
-		{
-			"type": "npm",
-			"script": "build-dev",
-			"group": "build",
-			"problemMatcher": [],
-			"label": "npm: build-dev",
-			"detail": "npx webpack --mode development"
 		}
 	]
 }

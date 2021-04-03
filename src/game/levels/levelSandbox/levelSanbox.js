@@ -14,7 +14,7 @@ export class LevelSandbox {
     }
 
     load() {
-        this.player = new Entity(new PlayerAvatar(50, 50));
+        this.player = new Entity(new PlayerAvatar(500, 50));
 
         const quad = new Quad2d([
             new Point2d(40, 80),
