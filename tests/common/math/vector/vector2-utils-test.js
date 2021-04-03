@@ -5,8 +5,7 @@ const { sameArrayElementsOnly } = assertions
 
 test('vector2-utils - translate', () => {
     const v = vector2(1, 1);
-    const delta = vector2(1, -30);
-    vector2Translate(v, delta);
+    vector2Translate(v, 1, -30);
     sameArrayElementsOnly([2, -29], v);
 });
 

@@ -1,6 +1,5 @@
-import { red } from "../../../../common/colors.js";
-import { vector2Distance, vector2lerp } from "../../../../common/math/vector/vector2-utils.js";
-import { vector2, vector2AreEquals, vector2Sub, vector2Zero } from "../../../../common/math/vector/vector2.js";
+import { vector2Distance, vector2lerp, vector2Translate } from "../../../../common/math/vector/vector2-utils.js";
+import { vector2, vector2AreEquals, vector2Sub } from "../../../../common/math/vector/vector2.js";
 
 export class Point2d {
     constructor(x, y) {
@@ -15,8 +14,36 @@ export class Point2d {
         return this.position[1];
     }
 
+    static getPointsOrderedByAsc(points) {
+        const cloned = Point2d.cloneList(points);
+        cloned.sort((a, b) => { return a.x - b.x; });
+        return cloned;
+    }
+
+    static translate(point, dx, dy) {
+        vector2Translate(point.position, dx, dy);
+    }
+
     static fromVector2(vector2) {
         return new Point2d(vector2[0], vector2[1]);
+    }
+
+    static clone(point) {
+        return new Point2d(point.x, point.y);
+    }
+
+    static cloneList(points) {
+        if (!points) return [];
+        const cloned = new Array(points.length);
+        for (let i = points.length - 1; i >= 0; --i) {
+            cloned[i] = Point2d.clone(points[i]);
+
+        }
+        return cloned;
+    }
+
+    static sameX(a, b) {
+        return a.x === b.x;
     }
 
     static draw(tex, point, color) {
@@ -43,7 +70,7 @@ export class Point2d {
         return Point2d.fromVector2(vector2lerp(a.position, b.position, t));
     }
 
-    static samePosition(p, q) {
+    static equals(p, q) {
         return vector2AreEquals(p.position, q.position);
     }
 }
