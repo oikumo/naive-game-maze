@@ -1,16 +1,9 @@
-import { Texture } from "naive-3d";
+import { textures } from "naive-3d";
 
 export function createTexture(width, height, color) {
-    const tex = new Texture(width, height);
-    tex.fill(() => color);
-    return tex;
+    return textures.createTexture(width, height, color);
 }
 
 export function createCheckerTexture(width, height, color, otherColor, tileWidth = 10, tileHeight = 10) {
-    const tex = new Texture(width, height);
-    tex.fill((col, row) => {
-        const ratio = Math.floor(col / tileWidth) + Math.floor(row / tileHeight);
-        return ratio % 2 == 0 ? color : otherColor;
-    });
-    return tex;
+    return textured.createCheckerTexture(width, height, color, otherColor, tileWidth, tileHeight);
 }
