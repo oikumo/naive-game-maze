@@ -1,8 +1,7 @@
-import { test, assertions } from 'naive-tests';
+import { test, assert } from 'naive-tests';
 import { red, white } from '../../../../../src/common/colors.js';
 import { createTexture } from '../../../../../src/engine/tex.js';
 import { drawCircleOnTexture } from '../../../../../src/engine/geometry/primitives/circle/circle-on-texture.js';
-const { equals } = assertions;
 
 test('circle on texture draw', () => {
     const tex = createTexture(50, 50, white);
@@ -27,7 +26,7 @@ test('circle on texture draw', () => {
             distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
             error = Math.abs(distance - radius);
             acceptableRadiusLen = error < pixelRadiusMaxError;
-            equals(acceptableRadiusLen, true, `Circle not draw properly at pixel x: ${x} y: ${y} err: ${error}`);
+            assert.equals(acceptableRadiusLen, true, `Circle not draw properly at pixel x: ${x} y: ${y} err: ${error}`);
         }
 
         if (x + 1 === tex.width) {

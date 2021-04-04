@@ -1,10 +1,9 @@
-import { test, assertions } from 'naive-tests';
+import { test, assert } from 'naive-tests';
 import { blue, red, white } from '../../../../../src/common/colors.js';
 import { Point2d } from '../../../../../src/engine/geometry/primitives/points/point2d.js';
 import { drawTriangle2dTexuredLeftToRight } from '../../../../../src/engine/geometry/primitives/triangles/triangle-2d-textured.js';
 import { Triangle2d } from '../../../../../src/engine/geometry/primitives/triangles/triangle-2d.js';
 import { createCheckerTexture, createTexture } from '../../../../../src/engine/tex.js';
-const { equals, sameArrayElementsOnly } = assertions;
 
 test('triangle 2d textured - draw', () => {
     const a = new Point2d(0, 0);

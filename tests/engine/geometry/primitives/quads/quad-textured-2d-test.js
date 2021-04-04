@@ -1,4 +1,4 @@
-import { test, assertions } from 'naive-tests';
+import { test, assert } from 'naive-tests';
 import { white } from '../../../../../src/common/colors.js';
 import { Point2d } from '../../../../../src/engine/geometry/primitives/points/point2d.js';
 import { QuadTextured2d } from '../../../../../src/engine/geometry/primitives/quads/quad-textured-2d.js';

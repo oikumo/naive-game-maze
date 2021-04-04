@@ -1,10 +1,9 @@
-import { test, assertions } from 'naive-tests'
+import { test, assert } from 'naive-tests';
 import { vector3Distance } from '../../../src/common/math/vector/vector3-utils.js';
 import { vector3 } from '../../../src/common/math/vector/vector3.js';
 import { Entity } from '../../../src/game/entity/entity.js';
 import { PlayerAvatar } from '../../../src/game/player/player-avatar.js';
 import { PlayerController } from '../../../src/game/player/player-controller.js';
-const { equals } = assertions;
 
 function createPlayerController() {
     const avatar = new PlayerAvatar(100, 100);
@@ -18,12 +17,12 @@ test('player controller - moveTo', () => {
     const target = vector3(0, 100, 0);
     player.moveTo(target);
     const distance = vector3Distance(target, player.position);
-    equals(0, distance);
+    assert.equals(0, distance);
 });
 
 test('player controller - actions', () => {
     const player = createPlayerController();
-    equals('primaryActionDisabled', player.update());
+    assert.equals('primaryActionDisabled', player.update());
     player.ActionPrimaryEnable();
-    equals('primaryActionEnabled', player.update());
+    assert.equals('primaryActionEnabled', player.update());
 });

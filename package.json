@@ -22,7 +22,7 @@
     },
     "homepage": "https://github.com/oikumo/naive-game-maze#readme",
     "dependencies": {
-        "naive-3d": "0.0.41"
+        "naive-3d": "0.0.42"
     },
     "devDependencies": {
         "naive-tests": "^1.1.2",
