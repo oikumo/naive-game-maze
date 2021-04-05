@@ -1,6 +1,4 @@
 import { test, assert } from 'naive-tests';
-import { vector3Distance } from '../../../src/common/math/vector/vector3-utils.js';
-import { vector3 } from '../../../src/common/math/vector/vector3.js';
 import { Entity } from '../../../src/game/entity/entity.js';
 import { PlayerAvatar } from '../../../src/game/player/player-avatar.js';
 import { PlayerController } from '../../../src/game/player/player-controller.js';
